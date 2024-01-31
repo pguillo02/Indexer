@@ -16,8 +16,17 @@ jobs:
         distribution: adopt
         java-version: 17
 
-    - name: Building
+    - name: Build artifact
       run: mvn clean install
+
+    - name: Build Docker image
+      run: docker build -t pguillo02/Indexer .
+
+    - name: Log in to Docker Hub
+      run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: Push to Docker Hub
+      run: docker push pguillo02/Indexer
 
    
     
