@@ -3,7 +3,7 @@ on:
     
 jobs:
   image:
-    name: commits code and generates and pushes docker image
+    name: Image push
     runs-on: ubuntu-latest
 
     steps:
@@ -20,13 +20,13 @@ jobs:
       run: mvn clean install
 
     - name: Build Docker image
-      run: docker build -t pguillo02/Indexer .
+      run: docker build -t pguillo02/indexer .
 
     - name: Log in to Docker Hub
       run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Push to Docker Hub
-      run: docker push pguillo02/Indexer
+      run: docker push pguillo02/indexer
 
    
     
