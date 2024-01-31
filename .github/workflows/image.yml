@@ -1,7 +1,11 @@
+name: CI/CD pipeline with docker
+
 on:
   push:
     branches:
       - main
+
+  workflow_dispatch:
     
 jobs:
   image:
