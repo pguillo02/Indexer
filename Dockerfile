@@ -9,4 +9,5 @@ WORKDIR /app
 COPY --from=build /app/target/Indexer-1.0.2.jar /app/target/Indexer-1.0.2.jar
 EXPOSE 8080
 EXPOSE 5701
+EXPOSE 4567
 CMD ["java", "-jar", "target/Indexer-1.0.2.jar"]
