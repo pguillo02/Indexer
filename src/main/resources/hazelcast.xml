@@ -7,6 +7,10 @@
         <port>5701</port>
         <join>
             <multicast enabled="true"/>
+            <tcp-ip enabled="true">
+                <member>192.168.1.100</member>
+                <member>192.168.1.101</member>
+            </tcp-ip
         </join>
     </network>
 
